@@ -37,6 +37,7 @@ npm run dev
 
 ## Project Structure
 
+```
 /
 ├── public/
 │ └── fonts/
@@ -47,6 +48,7 @@ npm run dev
 │ ├── styles/
 │ └── lib/
 └── package.json
+```
 
 ## Commands
 
