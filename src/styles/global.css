@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Alegreya Regular';
+  src: url('/fonts/alegreya-regular.woff2') format('woff2'),
+    url('/fonts/alegreya-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Anonymous Pro Regular';
+  src: url('/fonts/anonymous-pro-regular.woff2') format('woff2'),
+    url('/fonts/anonymous-pro-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@theme {
+  --color-white: #f7f6ec;
+  --color-black: #263435;
+  --color-accent: var(--color-indigo-700);
+
+  --font-header: 'Anonymous Pro Regular', monospace;
+  --font-body: 'Alegreya Regular', monospace;
+
+  --breakpoint-2xl: 1440px;
+  --breakpoint-3xl: 1600px;
+  --breakpoint-4xl: 1920px;
+
+  --nav-height: 80px;
+}
+
+/* Animations */
+
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /**
+  * Required class: `lsa` (initializes animations and defaults to fade-in)
+  * Note: Add `no-repeat` class to prevent animations from repeating on scroll
+  */
+  .lsa {
+    @apply opacity-0 transform transition duration-700;
+
+    /* Slide animations */
+    &.lsa-slide-up {
+      @apply translate-y-4;
+    }
+    &.lsa-slide-down {
+      @apply -translate-y-4;
+    }
+    &.lsa-slide-left {
+      @apply -translate-x-4;
+    }
+    &.lsa-slide-right {
+      @apply translate-x-4;
+    }
+    &.lsa-slide-down-right {
+      @apply -translate-x-4 -translate-y-4;
+    }
+    &.lsa-slide-down-left {
+      @apply translate-x-4 -translate-y-4;
+    }
+    &.lsa-slide-up-right {
+      @apply -translate-x-4 translate-y-4;
+    }
+    &.lsa-slide-up-left {
+      @apply translate-x-4 translate-y-4;
+    }
+
+    /* Handle active state */
+    &.active {
+      @apply opacity-100 translate-x-0 translate-y-0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scrollbar-color: var(--color-black) var(--color-white);
+    scrollbar-width: thin;
+
+    @apply font-body scroll-pt-8 scroll-smooth;
+  }
+
+  body {
+    @apply text-black bg-white;
+  }
+
+  section {
+    @apply py-20 md:py-28;
+  }
+
+  .container-lg {
+    @apply w-full max-w-screen-4xl m-auto;
+  }
+
+  .wrapper,
+  nav,
+  header,
+  main,
+  footer {
+    @apply w-full mx-auto p-4;
+  }
+
+  nav a[aria-current='page'] {
+    @apply text-accent decoration-2;
+  }
+
+  img,
+  svg,
+  video {
+    @apply block w-full h-auto;
+  }
+
+  /* Typography */
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-header text-balance text-black font-bold;
+  }
+
+  h1,
+  .h1 {
+    @apply text-5xl md:text-6xl;
+  }
+
+  h2,
+  .h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h3,
+  .h3 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  p,
+  a {
+    @apply text-pretty text-base md:text-lg;
+  }
+
+  a {
+    @apply text-black hover:text-accent underline underline-offset-2 decoration-dashed decoration-accent decoration-1 hover:decoration-2;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  input,
+  textarea {
+    @apply text-black;
+  }
+}

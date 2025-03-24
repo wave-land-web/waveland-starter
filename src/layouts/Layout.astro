@@ -1,0 +1,88 @@
+---
+import Footer from '../components/ui/Footer.astro'
+import Navigation from '../components/ui/Navigation.astro'
+import { SITE_URL, SITE_DESCRIPTION, SITE_TITLE } from '../consts'
+import '../styles/global.css'
+
+export interface Props {
+  title?: string
+  description?: string
+  socialImage?: string
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, socialImage } = Astro.props
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const socialImageURL = new URL(socialImage || '/images/og-image.png', canonicalURL)
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Facebook -->
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content={SITE_URL} />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+
+    <!-- Preload Fonts -->
+
+    <!-- Alegreya -->
+    <link
+      rel="preload"
+      href="/fonts/alegreya-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Anonymous Pro -->
+    <link
+      rel="preload"
+      href="/fonts/anonymous-pro-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Favicon & Theme -->
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+
+  <body>
+    <Navigation />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<script>
+  import { lsa } from '../lib/lsa.ts'
+
+  // Handle animations on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    lsa()
+
+    // Handle animations on scroll
+    document.addEventListener('scroll', lsa)
+  })
+</script>

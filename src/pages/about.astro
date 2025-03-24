@@ -1,0 +1,20 @@
+---
+import CTA from '../components/text/CTA.astro'
+import PageHeader from '../components/ui/PageHeader.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Wave Land Starter | About" description="This is an example of an about page.">
+  <PageHeader>
+    <h1>About</h1>
+    <p>This is an example of an about page.</p>
+  </PageHeader>
+
+  <main>
+    <section id="about" class="container mx-auto flex flex-col items-center gap-8 text-center">
+      <h2>About Us</h2>
+      <p>This section provides information about us.</p>
+      <CTA text="Reach Out" url="/contact" />
+    </section>
+  </main>
+</Layout>

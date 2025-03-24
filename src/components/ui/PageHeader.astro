@@ -1,0 +1,13 @@
+---
+export interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<header
+  class={`${className} h-[calc(100dvh-var(--nav-height))] flex flex-col justify-center items-center gap-8 text-center lsa lsa-slide-up no-repeat`}
+>
+  <slot />
+</header>

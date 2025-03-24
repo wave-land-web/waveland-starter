@@ -1,0 +1,64 @@
+---
+import { SITE_NAVIGATION } from '../../consts'
+
+const currentUrlPath = Astro.url.pathname
+---
+
+<footer class="container-lg">
+  <div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div>
+        <h2 class="text-lg">Popular Topics</h2>
+        <ul class="mt-4 space-y-2">
+          <li>
+            <a href="/blog/tag/performing">Performing</a>
+          </li>
+          <li>
+            <a href="/blog/tag/recording">Recording</a>
+          </li>
+          <li>
+            <a href="/blog/tag/web-development">Web Development</a>
+          </li>
+          <li>
+            <a href="/blog/tag/improvisation-tips">Improvisation Tips</a>
+          </li>
+        </ul>
+      </div>
+
+      <nav aria-label="Site Footer Menu" class="p-0">
+        <h2 class="text-lg">Navigation</h2>
+        <ul class="mt-4 space-y-2">
+          {
+            SITE_NAVIGATION.map(({ title, href }: { title: string; href: string }) => (
+              <li>
+                <a
+                  href={href === '/' ? '/' : href}
+                  aria-current={currentUrlPath === href ? 'page' : undefined}
+                >
+                  {title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="text-lg">Contact</h2>
+        <p class="text-sm">
+          <a href="mailto:you@example.com">you@example.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr class="my-8 border-t border-(--color-secondary-text)" />
+
+  <div class="text-center text-sm">
+    <p>
+      © Wave Land {new Date().getFullYear()}
+    </p>
+    <p>
+      Website by <a href="https://wavelandweb.com">Wave Land</a>
+    </p>
+  </div>
+</footer>

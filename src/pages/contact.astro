@@ -1,0 +1,20 @@
+---
+import CTA from '../components/text/CTA.astro'
+import PageHeader from '../components/ui/PageHeader.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Wave Land Starter | Contact" description="Please reach out to us for any inquiries.">
+  <PageHeader>
+    <h1>Contact</h1>
+    <p>Please reach out to us for any inquiries.</p>
+  </PageHeader>
+
+  <main>
+    <section id="contact" class="container mx-auto flex flex-col items-center gap-8 text-center">
+      <h2>Get in Touch</h2>
+      <p>Please reach out to us for any inquiries.</p>
+      <CTA text="Contact Us" url="/contact" />
+    </section>
+  </main>
+</Layout>
