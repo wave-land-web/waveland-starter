@@ -18,7 +18,7 @@ const { text, url, arrowLeft, newWindow, linkClass, iconClass } = Astro.props
   href={url}
   target={newWindow ? '_blank' : '_self'}
   rel={newWindow ? 'noopener noreferrer' : ''}
-  class={`${linkClass} flex gap-2 items-center bg-accent text-white w-fit py-2 px-4 rounded-full border-2 group text-xl md:text-2xl`}
+  class={`${linkClass} flex gap-2 items-center bg-accent text-background w-fit py-2 px-4 rounded-full border-2 group text-xl md:text-2xl`}
   aria-label={text}
 >
   {

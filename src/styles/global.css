@@ -19,8 +19,8 @@
 }
 
 @theme {
-  --color-white: #f7f6ec;
-  --color-black: #263435;
+  --color-background: var(--color-slate-50);
+  --color-foreground: var(--color-slate-950);
   --color-accent: var(--color-indigo-700);
 
   --font-header: 'Anonymous Pro Regular', monospace;
@@ -82,14 +82,14 @@
 
 @layer base {
   html {
-    scrollbar-color: var(--color-black) var(--color-white);
+    scrollbar-color: var(--color-foreground) var(--color-background);
     scrollbar-width: thin;
 
     @apply font-body scroll-pt-8 scroll-smooth;
   }
 
   body {
-    @apply text-black bg-white;
+    @apply text-foreground bg-background;
   }
 
   section {
@@ -125,7 +125,7 @@
   h3,
   h4,
   h5 {
-    @apply font-header text-balance text-black font-bold;
+    @apply font-header text-balance text-foreground font-bold;
   }
 
   h1,
@@ -149,7 +149,7 @@
   }
 
   a {
-    @apply text-black hover:text-accent underline underline-offset-2 decoration-dashed decoration-accent decoration-1 hover:decoration-2;
+    @apply text-foreground hover:text-accent underline underline-offset-2 decoration-dashed decoration-accent decoration-1 hover:decoration-2;
   }
 
   button {
@@ -158,6 +158,6 @@
 
   input,
   textarea {
-    @apply text-black;
+    @apply text-foreground;
   }
 }
