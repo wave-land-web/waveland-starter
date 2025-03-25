@@ -7,7 +7,7 @@ import { defineConfig } from 'astro/config'
 // https://astro.build/config
 export default defineConfig({
   // Replace with your actual site URL
-  site: 'https://example.com',
+  site: 'https://waveland-starter.netlify.app/',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
