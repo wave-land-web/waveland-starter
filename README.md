@@ -1,11 +1,11 @@
 # Wave Land Starter
 
-A lightweight starter template for building websites with [Astro](https://astro.build), featuring smooth scroll animations, responsive navigation, and Netlify deployment.
+A lightweight starter template for building websites with [Astro](https://astro.build), featuring lightweight scroll animations, Tailwind CSS, optimized fonts, and more.
 
 ## Features
 
 - 🚀 Built with Astro
-- 💨 TailwindCSS for styling
+- 💨 Tailwind CSS for styling
 - 🎨 Optimized fonts
 - 📱 Mobile responsive
 - ✨ Lightweight scroll animations
@@ -17,38 +17,46 @@ A lightweight starter template for building websites with [Astro](https://astro.
 
 1. Clone this repository:
 
-```bash
-git clone https://github.com/wave-land-web/waveland-starter.git my-project
-cd my-project
-```
+   ```bash
+   git clone https://github.com/wave-land-web/waveland-starter.git my-project
+   cd my-project
+   ```
 
 2. Install dependencies:
 
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
 3. Start the development server:
 
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
 4. Open your browser and visit `http://localhost:4321`
 
 ## Project Structure
 
-```
+```text
 /
 ├── public/
-│ └── fonts/
+│   ├── fonts/
+│   ├── images/
+│   └── favicon.svg
 ├── src/
-│ ├── components/
-│ ├── layouts/
-│ ├── pages/
-│ ├── styles/
-│ └── lib/
-└── package.json
+│   ├── assets/
+│   ├── components/
+│   ├── layouts/
+│   ├── lib/
+│   ├── pages/
+│   ├── styles/
+│   └── consts.ts
+├── .gitignore
+├── astro.config.mjs
+├── package.json
+├── README.md
+└── tsconfig.json
 ```
 
 ## Commands
