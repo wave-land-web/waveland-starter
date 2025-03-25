@@ -11,16 +11,16 @@ const currentUrlPath = Astro.url.pathname
         <h2 class="text-lg">Popular Topics</h2>
         <ul class="mt-4 space-y-2">
           <li>
-            <a href="/blog/tag/performing">Performing</a>
+            <a href="#">Performing</a>
           </li>
           <li>
-            <a href="/blog/tag/recording">Recording</a>
+            <a href="#">Recording</a>
           </li>
           <li>
-            <a href="/blog/tag/web-development">Web Development</a>
+            <a href="#">Web Development</a>
           </li>
           <li>
-            <a href="/blog/tag/improvisation-tips">Improvisation Tips</a>
+            <a href="#">Improvisation Tips</a>
           </li>
         </ul>
       </div>
@@ -45,8 +45,8 @@ const currentUrlPath = Astro.url.pathname
 
       <div>
         <h2 class="text-lg">Contact</h2>
-        <p class="text-sm">
-          <a href="mailto:you@example.com">you@example.com</a>
+        <p>
+          <a href="mailto:hello@wavelandweb.com">hello@wavelandweb.com</a>
         </p>
       </div>
     </div>
@@ -55,10 +55,20 @@ const currentUrlPath = Astro.url.pathname
 
   <div class="text-center text-sm">
     <p>
-      © Wave Land {new Date().getFullYear()}
+      Website by <a href="https://wavelandweb.com" target="_blank" rel="noopener noreferrer"
+        >Wave Land</a
+      > © {new Date().getFullYear()}
     </p>
     <p>
-      Website by <a href="https://wavelandweb.com">Wave Land</a>
+      Follow us on <a
+        href="https://www.instagram.com/wavelandweb/"
+        target="_blank"
+        rel="noopener noreferrer">Instagram</a
+      > and <a
+        href="https://www.linkedin.com/company/wave-land/"
+        target="_blank"
+        rel="noopener noreferrer">LinkedIn</a
+      >
     </p>
   </div>
 </footer>
