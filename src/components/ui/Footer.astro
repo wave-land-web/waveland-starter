@@ -8,8 +8,8 @@ const currentUrlPath = Astro.url.pathname
   <div class="mb-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <div>
-        <h2 class="text-lg">Popular Topics</h2>
-        <ul class="mt-4 space-y-2">
+        <h2 class="mb-4 text-lg">Popular Topics</h2>
+        <ul class="flex flex-col gap-2">
           <li>
             <a href="#">Performing</a>
           </li>
@@ -26,8 +26,8 @@ const currentUrlPath = Astro.url.pathname
       </div>
 
       <nav aria-label="Site Footer Menu" class="p-0">
-        <h2 class="text-lg">Navigation</h2>
-        <ul class="mt-4 space-y-2">
+        <h2 class="mb-4 text-lg">Navigation</h2>
+        <ul class="flex flex-col gap-2">
           {
             SITE_NAVIGATION.map(({ title, href }: { title: string; href: string }) => (
               <li>
@@ -45,7 +45,7 @@ const currentUrlPath = Astro.url.pathname
       </nav>
 
       <div>
-        <h2 class="text-lg">Contact</h2>
+        <h2 class="mb-4 text-lg">Contact</h2>
         <p>
           <a href="mailto:hello@wavelandweb.com">hello@wavelandweb.com</a>
         </p>
