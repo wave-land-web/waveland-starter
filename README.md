@@ -10,6 +10,7 @@ A lightweight starter template for building websites with [Astro](https://astro.
 - 📱 Mobile responsive
 - ✨ Lightweight scroll animations
 - 🌐 SEO-friendly
+- 📋 Dynamic sitemap
 - 🫥 Custom 404 page
 - 🚀 Ready for Netlify deployment
 
