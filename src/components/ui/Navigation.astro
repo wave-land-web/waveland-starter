@@ -21,6 +21,7 @@ const currentUrlPath = Astro.url.pathname
           <a
             href={href === '/' ? '/' : href}
             aria-current={currentUrlPath === href ? 'page' : undefined}
+            data-current-page={currentUrlPath === href}
           >
             {title}
           </a>
